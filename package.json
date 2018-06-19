@@ -43,11 +43,13 @@
     "moment-timezone": "^0.5.14",
     "ncp": "^2.0.0",
     "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "NMFR/optimize-css-assets-webpack-plugin",
     "popper.js": "^1.14.3",
     "precss": "^3.1.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",
     "transfer-webpack-plugin": "^0.1.4",
+    "uglifyjs-webpack-plugin": "1.2.4",
     "url-loader": "^1.0.1",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.0.14"
