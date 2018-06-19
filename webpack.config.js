@@ -1,15 +1,22 @@
-const webpack = require('webpack');
+// helpers
+const glob = require('glob');
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const glob = require("glob");
+const webpack = require('webpack');
 
+// plugins
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+// build a dynamic object listing the packages to be processed
 let packagesToBuild = {
     'CarafeHomePage': 'app/CarafeHomePage.js',
 };
 
-glob.sync(path.join(__dirname, "carafe-packages/**/Package.js")).forEach((filePath) => {
+// folders inside carafe-packages with a Package.js file will be added to the object listing
+glob.sync(path.join(__dirname, 'carafe-packages/**/Package.js')).forEach((filePath) => {
     packagesToBuild[filePath.replace('/Package.js', '').replace(/\\/g,'/').replace( /.*\//, '' )] = filePath;
 });
 
@@ -17,9 +24,9 @@ module.exports = {
     entry: packagesToBuild,
     resolve: {
         modules: [
-            path.join(__dirname, "es6"),
-            path.join(__dirname, "carafe-packages"),
-            "node_modules"
+            path.join(__dirname, 'es6'),
+            path.join(__dirname, 'carafe-packages'),
+            'node_modules'
         ]
     },
     output: {
@@ -27,11 +34,21 @@ module.exports = {
         filename: '[name]/[name].bundle.js',
         publicPath: '/',
     },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true // set to true if you want JS source maps
+            }),
+            new OptimizeCssAssetsPlugin({})
+        ]
+    },
     plugins: [
         new CleanWebpackPlugin(['public/carafe-packages-build']),
         new MiniCssExtractPlugin({
-            filename: "[name]/[name].css",
-            chunkFilename: "[id].css"
+            filename: '[name]/[name].css',
+            chunkFilename: '[id].css'
         }),
         new CopyWebpackPlugin([{
             context: './carafe-packages/',
@@ -46,6 +63,15 @@ module.exports = {
             force: true
         }], {
             copyUnmodified: true
+        }),
+        new UglifyJsPlugin({
+            test: /\.js($|\?)/i
+        }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: { safe: true, discardComments: { removeAll: true } },
+            canPrint: true
         })
     ],
     module: {
@@ -64,7 +90,7 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    "css-loader"
+                    'css-loader'
                 ]
             },
             // process png, jpg, gif, svg imports
