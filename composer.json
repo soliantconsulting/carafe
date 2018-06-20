@@ -1,12 +1,27 @@
 {
   "name": "soliant/carafe-sdk",
-  "description": "",
+  "version": "0.0.1",
+  "description": "SDK for the Carafe JavaScript package manager for FileMaker Web Viewer integration",
+  "type": "project",
+  "homepage": "https://github.com/soliantconsulting/carafe#readme",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jesse LaVere",
+      "email": "jlavere@soliantconsulting.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Jeremiah Small",
+      "email": "jsmall@soliantconsulting.com",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "php": "^7.2"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.0.8 || ^5.7.15",
     "squizlabs/php_codesniffer": "^2.8.1"
-  },
-  "license": "MIT"
+  }
 }

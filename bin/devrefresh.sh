@@ -5,10 +5,11 @@ if [ "$1" = "--hard" ]; then
     docker pull node:8.1
 fi
 
+docker-compose build
 docker-compose run --rm build yarn install
 docker-compose run --rm build webpack --mode development
+docker-compose up -d
 docker-compose exec web composer install
-docker-compose up -d --build
 docker-compose restart
 
 read -r -d '' Heredoc_var <<'Heredoc_var'

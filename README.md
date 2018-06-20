@@ -8,22 +8,32 @@ To run the project in development, you need to have [Docker](https://www.docker.
 ### Development Quick Start (See devrefresh for more info)
   - Shorthand Development Environment Refresh
     - Runs a subset of above commands to quickly refresh dev after changes have been made.
-      - `./devrefresh.sh`
+      - `./bin/devrefresh.sh`
     - To force all the Docker images to update, you can run it with the `--hard` switch
-      - `./devrefresh.sh --hard`
+      - `./bin/devrefresh.sh --hard`
 
-You can now access the project via [http://localhost:8000](http://localhost:8000).
+You can now preview all the Carafe packages at [http://localhost:8000](http://localhost:8000).
+
 # Docker Development Environment
 
-This application is running apache2/php7.2 built with Docker and stored in git. Php package
-dependencies are managed with composer in package.json. Javascript and CSS package dependencies are managed with npm in
-composer.json. 
+This application is running on a stock `apache2/php7.2` Docker container.
+PHP dependencies are managed with Composer in `/composer.json`.
+JavaScript and CSS dependencies are managed with NPM in `/package.json`.
 
-## Making continuous changes in the /es6 directory
+## Developing in the /carafe-packages-src directory
 
-While working on the front-end, you may have to call webpack multiple times. Instead you can run the following command,
-which while watch the directory for changes and rebuild when required:
+While working on Carafe packages, you generally have to call webpack after every edit.
+Instead you can run the following command, which will watch the directory for changes and rebuild when required:
 
 ```
 docker-compose run --rm build webpack --mode development --watch
+```
+
+Development changes are output to public, so you can view them in the
+
+## Publishing Packages
+When a package is ready to be released, run webpack in mode production to minify js and css files and deploy to `/carafe-package`.
+
+```
+docker-compose run --rm build webpack --mode production
 ```

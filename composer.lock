@@ -1,52 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d436d4664ae23051ddb2edf6fca7d27f",
-    "packages": [
-        {
-            "name": "geekality/php-cross-domain-proxy",
-            "version": "v2.1.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Svish/php-cross-domain-proxy.git",
-                "reference": "7d343de903dd039cb4afa22f80332a2ba2f80171"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Svish/php-cross-domain-proxy/zipball/7d343de903dd039cb4afa22f80332a2ba2f80171",
-                "reference": "7d343de903dd039cb4afa22f80332a2ba2f80171",
-                "shasum": ""
-            },
-            "require": {
-                "lib-curl": "^7",
-                "php": "^7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Geekality\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "description": "Simple self-contained PHP proxy for cross-origin ajax requests.",
-            "keywords": [
-                "ajax",
-                "cors",
-                "cross-domain",
-                "http",
-                "javascript",
-                "php-cross-domain-proxy",
-                "proxy"
-            ],
-            "time": "2018-01-23T22:14:28+00:00"
-        }
-    ],
+    "content-hash": "51be1649fce199c9a960c5000b0856a4",
+    "packages": [],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -104,25 +63,28 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.7.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
+                "reference": "3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
-                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8",
+                "reference": "3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0"
+                "php": "^7.1"
+            },
+            "replace": {
+                "myclabs/deep-copy": "self.version"
             },
             "require-dev": {
                 "doctrine/collections": "^1.0",
                 "doctrine/common": "^2.6",
-                "phpunit/phpunit": "^4.1"
+                "phpunit/phpunit": "^7.1"
             },
             "type": "library",
             "autoload": {
@@ -145,7 +107,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-10-19T19:58:43+00:00"
+            "time": "2018-06-11T23:09:50+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -403,23 +365,23 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.7.5",
+            "version": "1.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401"
+                "reference": "33a7e3c4fda54e912ff6338c48823bd5c0f0b712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dfd6be44111a7c41c2e884a336cc4f461b3b2401",
-                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
+                "reference": "33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
-                "sebastian/comparator": "^1.1|^2.0",
+                "sebastian/comparator": "^1.1|^2.0|^3.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
             "require-dev": {
@@ -462,7 +424,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-02-19T10:16:54+00:00"
+            "time": "2018-04-18T13:57:24+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -799,16 +761,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "5.0.6",
+            "version": "5.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "33fd41a76e746b8fa96d00b49a23dadfa8334cdf"
+                "reference": "3eaf040f20154d27d6da59ca2c6e28ac8fd56dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/33fd41a76e746b8fa96d00b49a23dadfa8334cdf",
-                "reference": "33fd41a76e746b8fa96d00b49a23dadfa8334cdf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/3eaf040f20154d27d6da59ca2c6e28ac8fd56dce",
+                "reference": "3eaf040f20154d27d6da59ca2c6e28ac8fd56dce",
                 "shasum": ""
             },
             "require": {
@@ -854,7 +816,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2018-01-06T05:45:45+00:00"
+            "time": "2018-05-29T13:50:43+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

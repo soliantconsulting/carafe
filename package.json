@@ -1,10 +1,19 @@
 {
-  "name": "SoliantFMJSRecipes",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "ssh://git@versions.soliantconsulting.com:7999/soliant/fmcap.git",
-  "author": "Jesse LaVere <jlavere@soliantconsulting.com>",
+  "name": "@soliant/carafe-sdk",
+  "version": "0.0.1",
+  "description": "SDK for the Carafe JavaScript package manager for FileMaker Web Viewer integration",
+  "homepage": "https://github.com/soliantconsulting/carafe#readme",
   "license": "MIT",
+  "contributors": [
+    {
+      "name": "Jesse LaVere",
+      "email": "jlavere@soliantconsulting.com"
+    },
+    {
+      "name": "Jeremiah Small",
+      "email": "jsmall@soliantconsulting.com"
+    }
+  ],
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -53,9 +62,5 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.0.14"
-  },
-  "scripts": {
-    "dev": "webpack-dev-server --mode development",
-    "prod": "webpack --mode production"
   }
 }
