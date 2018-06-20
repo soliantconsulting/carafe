@@ -83,7 +83,7 @@ export default class InlineConsole {
                     this.echo('');
                 }
             }, {
-                greetings: 'FileMaker Javascript Console - 2018\nJesse LaVere - Soliant Consulting\n\n',
+                greetings: 'FileMaker Javascript Console - 2018\nSoliant Consulting\n\n',
                 outputLimit: -1
             });
         });

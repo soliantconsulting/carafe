@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- carafeZoneStart -->
+        <link rel="stylesheet" type="text/css" href="./GroupItemOrdering.css">
+        <script src="./GroupItemOrdering.bundle.js"></script>
+        <!-- carafeZoneEnd  -->
+    </head>
+    <body>
+        <section id="container" class="mb3 mx-auto col col-12">
+            <div id="col1" class="p3 bg-white orange col col-6">
+                <ul class="js-sortable-connected list flex flex-column list-reset">
+                    <li class="disabled p1 mb1 border border-white white bg-silver cardmargin">
+                        <div id="searchli">
+                            <input id="searchfield" class="search" placeholder="Filter items" onkeyup="filterItemList()"/>
+                            <ul id="itemslist"
+                                class="list js-sortable-inner-connected list flex flex-column list-reset m0 py1"></ul>
+                        </div>
+                    </li>
+                </ul>
+                <br>
+                <button class="exportContents">Export</button>
+                <br>
+                <code class="exportContents"></code>
+            </div>
+            <div id="col2" class="p3 bg-very-light-gray white col col-6">
+                <ul class="js-sortable-connected list flex flex-column list-reset">
+                    <li data-type="group" data-id="1" class="p1 mb1 bg-white cardshadow cardmargin">
+                        <div class="cardlabel">Group 1</div>
+                        <ul class="js-sortable-inner-connected list flex flex-column list-reset mb0 py1"></ul>
+                    </li>
+                    <li data-type="group" data-id="2" class="p1 mb1 bg-white cardshadow cardmargin">
+                        <div class="cardlabel">Group 2</div>
+                        <ul class="js-sortable-inner-connected list flex flex-column list-reset mb0 py1"></ul>
+                    </li>
+                    <li data-type="group" data-id="3" class="p1 mb1 bg-white cardshadow cardmargin">
+                        <div class="cardlabel">Group 3</div>
+                        <ul class="js-sortable-inner-connected list flex flex-column list-reset mb0 py1"></ul>
+                    </li>
+                    <li data-type="group" data-id="4" class="p1 mb1 bg-white cardshadow cardmargin">
+                        <div class="cardlabel">Group 4</div>
+                        <ul class="js-sortable-inner-connected list flex flex-column list-reset mb0 py1"></ul>
+                    </li>
+                    <li data-type="group" data-id="5" class="p1 mb1 bg-white cardshadow cardmargin">
+                        <div class="cardlabel">Group 5</div>
+                        <ul class="js-sortable-inner-connected list flex flex-column list-reset mb0 py1"></ul>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+    </body>
+    <script type="text/javascript">
+        function filterItemList() {
+            let input, filter, ul, li, a, i;
+            input = document.getElementById("searchfield");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("itemslist");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("td")[0];
+                b = li[i].getElementsByTagName("td")[1];
+                c = li[i].getElementsByTagName("td")[2];
+                d = li[i].getElementsByTagName("td")[3];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1 || b.innerHTML.toUpperCase().indexOf(filter) > -1 || c.innerHTML.toUpperCase().indexOf(filter) > -1 || d.innerHTML.toUpperCase().indexOf(filter) > -1
+                ) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        function exportIds() {
+            let idlist = [];
+            jQuery.each(jQuery("#col2 li"), function(i, item) {
+                let id = jQuery(item).data("id");
+                let type = jQuery(item).data("type");
+                idlist.push(type + " " + id);
+            });
+            updatelist = idlist.join(",");
+
+            jQuery('code.exportContents').html(JSON.stringify(idlist,null,'<br>'));
+
+            //Create fmp URL to run a script in FileMaker with idlist as the parameter
+            //FileMaker will then parse to create group (parent) records and item (child) records
+            //idlist should be JSON formatted, but I can't figure out how to do it.
+            //	fmFileName ='fileName';
+            //	fmScriptName = 'scriptName';
+            //	theURL = 'fmp://$/' + fileName + '?script=' + scriptName + '&$param=' + idlist ;
+            //  	window.location = theURL ;
+        }
+
+        new GroupItemOrganizer(carafeData);
+
+        jQuery('button.exportContents').on('click', (e) => {
+            exportIds();
+        })
+    </script>
+</html>

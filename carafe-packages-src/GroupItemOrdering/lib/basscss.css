@@ -1066,7 +1066,7 @@ input[type=range] {
 .bg-navy  { background-color: #001f3f }
 .bg-teal  { background-color: #39cccc }
 .bg-green { background-color: #2ecc40 }
-.bg-olive { background-color: rgb(61, 153, 112, 0.8) }
+.bg-olive { background-color: rgba(61, 153, 112, 0.8) }
 .bg-lime  { background-color: #01ff70 }
 
 .bg-yellow  { background-color: #ffdc00 }

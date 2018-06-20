@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import exampleSrc from './lib/example.png';
 import jpgSrc from './lib/example.jpeg';
 import './lib/HeaderSidebar.css';
-import './lib/style.scss';
 
 jQuery(document).ready(function () {
     let myPng = new Image();
