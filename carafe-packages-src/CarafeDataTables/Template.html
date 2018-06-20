@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- carafeZoneStart -->
+        <link rel="stylesheet" type="text/css" href="./CarafeDataTables.css">
+        <script src="./CarafeDataTables.bundle.js"></script>
+        <!-- carafeZoneEnd  -->
+    </head>
+    <body>
+        <div class="container ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <h2>Soliant FileMaker / Javascript Table Management</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table id="example" class="display compact display table table-striped table-bordered table-hover" cellspacing="0" width="100%"></table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#example').DataTable({
+                data: carafeData,
+                columns: [
+                    {title: "Name"},
+                    {title: "Position"},
+                    {title: "Office"},
+                    {title: "Extn."},
+                    {title: "Start date"},
+                    {title: "Salary"}
+                ]
+            });
+        });
+    </script>
+</html>

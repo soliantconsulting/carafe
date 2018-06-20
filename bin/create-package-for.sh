@@ -11,7 +11,7 @@ public_path="${root_path}/public/"
 html_filename="${public_path}${recipe_name}.html"
 json_filename="${public_path}${recipe_name}JsonData.js"
 
-carafe_packages="$root_path/carafe-packages/"
+carafe_packages="$root_path/carafe-packages-src/"
 package_path="${carafe_packages}${recipe_name}"
 
 if $delete_existing ; then
