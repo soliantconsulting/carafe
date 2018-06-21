@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+if (php_sapi_name() == "cli") {
+    // In cli-mode
+    ob_start();
+}
+?><!doctype html>
 
 <html lang="en">
     <head>
@@ -23,24 +28,24 @@
             <h1 class="mt-5">Carafe Packages</h1>
             <p class="lead">Click a package below to view it in the browser.</p>
             <?php
-            $dir = new DirectoryIterator('./carafe-packages-build/');
+            $dir = new DirectoryIterator('./carafe-package/');
             foreach ($dir as $fileinfo) {
                 if ($fileinfo->isDir() && ! $fileinfo->isDot() && 'CarafeHomePage' !== $fileinfo->getFilename()) {
-                    echo '<div class="row">';
-                    echo '<div class="col-4">';
-                    echo '<span>' . $fileinfo->getFilename() . '</span>';
+                    echo '<div class="row row-striped">';
+                    echo '<div class="col-3">';
+                    echo '<span><h4>' . $fileinfo->getFilename() . '</h4></span>';
                     echo "</div>";
-                    echo '<div class="col-4">';
-                    echo ' <a href="/carafe-packages-build/' . $fileinfo->getFilename() . '/Template.html' . '" target="_blank">demo</a>';
+                    echo '<div class="col-2">';
+                    echo ' <a href="/carafe-packages-build/' . $fileinfo->getFilename() . '/Template.html' . '" target="_blank">View Example</a>';
                     echo "</div>";
-                    echo '<div class="col-4">';
+                    echo '<div class="col-7">';
                     echo ' <a href="#" data-playground="jsfiddle" data-playground-from-group="' . $fileinfo->getFilename() . '" ' .
                         'data-playground-resources="' .
-                            'http://localhost:8000/carafe-packages-build/' . $fileinfo->getFilename() . '/' . $fileinfo->getFilename() . '.bundle.js,' .
-                            'http://localhost:8000/carafe-packages-build/' . $fileinfo->getFilename() . '/' . $fileinfo->getFilename() . '.css">JS Fiddle</a>';
+                            'https://cdn.rawgit.com/soliantconsulting/carafe/master/carafe-package/' . $fileinfo->getFilename() . '/' . $fileinfo->getFilename() . '.bundle.js,' .
+                            'https://cdn.rawgit.com/soliantconsulting/carafe/master/carafe-package/' . $fileinfo->getFilename() . '/' . $fileinfo->getFilename() . '.css">Edit in JS Fiddle</a>';
                     echo "<div style='display:none;'>";
                     echo "<pre data-playground-type='html' data-playground-group='" . $fileinfo->getFilename() . "'>";
-                    echo htmlentities(file_get_contents('./carafe-packages-build/' . $fileinfo->getFilename() . '/Template.html'));
+                    echo htmlentities(file_get_contents($fileinfo->getPathname() . '/Template.html'));
                     echo '</pre>';
                     echo "</div>";
                     echo "</div>";
@@ -57,3 +62,12 @@
         </footer>
     </body>
 </html>
+<?php
+if (php_sapi_name() == "cli") {
+    // In cli-mode
+    $html = ob_get_contents();
+    ob_end_clean();
+    file_put_contents(realpath(__DIR__ . '/../public/') . '/index.html', $html);
+    file_put_contents(realpath(__DIR__ . '/../docs/') . '/index.html', $html);
+    echo "index.html has been generated\n";
+}

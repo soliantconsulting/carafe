@@ -32,8 +32,8 @@ docker-compose run --rm build webpack --mode development --watch
 Development changes are output to public, so you can preview them in the development environment by refreshing [http://localhost:8000](http://localhost:8000) in your browser.
 
 ## Publishing Packages
-When a package is ready to be released, run webpack in mode production to minify js and css files and deploy to `/carafe-package`.
+When a package is ready to be released, run webpack in mode production to minify js and css files and deploy to `/carafe-package`. Then run the php helper script to generate a new index.html page and update the code to build the JS Fiddle links.
 
 ```
-docker-compose run --rm build webpack --mode production
+docker-compose run --rm build webpack --mode production ; docker-compose run --rm web composer build-index
 ```
