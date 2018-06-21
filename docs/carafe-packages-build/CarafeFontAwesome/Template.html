@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- carafeZoneStart -->
+        <link rel="stylesheet" type="text/css" href="./CarafeFontAwesome.css">
+        <script src="./CarafeFontAwesome.bundle.js"></script>
+        <!-- carafeZoneEnd  -->
+    </head>
+    <body>
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="/">Carafe</a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Font Awesome 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <h2>Font Awesome 4</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <section id="fixed-width">
+                    <h2 class="page-header">Fixed Width Icons</h2>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                            <div class="list-group">
+                                <a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+                                <a class="list-group-item" href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+                                <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+                                <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-8">
+                            <p>
+                                Use <code>fa-fw</code> to set icons at a fixed width. Great to use when different icon widths throw off alignment.
+                                Especially useful in things like nav lists &amp; list groups.
+                            </p>
+                            <div class="highlight">
+                                <pre>
+<code class="html">
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"list-group-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-home fa-fw"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span><span class="ni">&amp;nbsp;</span> Home<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"list-group-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-book fa-fw"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span><span class="ni">&amp;nbsp;</span> Library<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"list-group-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-pencil fa-fw"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span><span class="ni">&amp;nbsp;</span> Applications<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"list-group-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-cog fa-fw"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span><span class="ni">&amp;nbsp;</span> Settings<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section id="list">
+                    <h2 class="page-header">List Icons</h2>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                            <ul class="fa-ul">
+                                <li><i class="fa-li fa fa-check-square"></i>List icons</li>
+                                <li><i class="fa-li fa fa-check-square"></i>can be used</li>
+                                <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
+                                <li><i class="fa-li fa fa-square"></i>in lists</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-9 col-sm-8">
+                            <p>Use <code>fa-ul</code> and <code>fa-li</code> to easily replace default bullets in unordered lists.</p>
+                            <div class="highlight">
+                                <pre>
+<code class="html">
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"fa-ul"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa-li fa fa-check-square"</span><span class="nt">&gt;&lt;/i&gt;</span>List icons<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa-li fa fa-check-square"</span><span class="nt">&gt;&lt;/i&gt;</span>can be used<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa-li fa fa-spinner fa-spin"</span><span class="nt">&gt;&lt;/i&gt;</span>as bullets<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa-li fa fa-square"</span><span class="nt">&gt;&lt;/i&gt;</span>in lists<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section id="animated">
+                    <h2 class="page-header">Animated Icons</h2>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                            <p>
+                                <i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i>
+                                <span class="sr-only">Loading example (with fa-spinner icon)</span>
+
+                                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw margin-bottom"></i>
+                                <span class="sr-only">Loading (with fa-circle-o-notch icon)</span>
+
+                                <i class="fa fa-refresh fa-spin fa-3x fa-fw margin-bottom"></i>
+                                <span class="sr-only">Loading example (with fa-refresh icon)</span>
+
+                                <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+                                <span class="sr-only">Loading example (with fa-cog icon)</span>
+
+                                <i class="fa fa-spinner fa-pulse fa-3x fa-fw margin-bottom"></i>
+                                <span class="sr-only">Loading example (with fa-spinner icon)</span>
+                            </p>
+                        </div>
+                        <div class="col-md-9 col-sm-8">
+                            <p>
+                                Use the <code>fa-spin</code> class to get any icon to rotate, and use <code>fa-pulse</code> to have it rotate
+                                with 8 steps. Works well with <code>fa-spinner</code>, <code>fa-refresh</code>, and <code>fa-cog</code>.
+                            </p>
+                            <div class="highlight">
+                                <pre>
+<code class="html">
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-spinner fa-spin fa-3x fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Loading...<span class="nt">&lt;/span&gt;</span>
+
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-circle-o-notch fa-spin fa-3x fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Loading...<span class="nt">&lt;/span&gt;</span>
+
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-refresh fa-spin fa-3x fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Loading...<span class="nt">&lt;/span&gt;</span>
+
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-cog fa-spin fa-3x fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Loading...<span class="nt">&lt;/span&gt;</span>
+
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-spinner fa-pulse fa-3x fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Loading...<span class="nt">&lt;/span&gt;</span>
+</code>
+                                </pre>
+                            </div>
+                            <p class="alert alert-success">
+                                <i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i><strong class="sr-only">Note:</strong>
+                                Some browsers on some platforms have issues with animated icons resulting in a jittery wobbling effect. See
+                                <a href="https://github.com/FortAwesome/Font-Awesome/issues/671" class="alert-link" target="_blank">issue #671</a>
+                                for examples and possible workarounds.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Soliant Consulting</span>
+            </div>
+        </footer>
+
+    </body>
+</html>
