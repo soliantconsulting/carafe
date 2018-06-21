@@ -35,3 +35,11 @@ body > .container {
 code {
     font-size: 80%;
 }
+
+.row-striped:nth-of-type(odd){
+    background-color: #efefef;
+}
+
+.row-striped:nth-of-type(even){
+    background-color: #ffffff;
+}
