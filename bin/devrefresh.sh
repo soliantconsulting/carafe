@@ -14,9 +14,18 @@ docker-compose restart
 
 read -r -d '' Heredoc_var <<'Heredoc_var'
 \x1b[0m
+                 )
+                (
+    __========__ )
+ .-'------------ /
+( C|/\/\/\/\/\/\|
+ '-./\/\/\/\/\/\|
+   '____________'
+    '----------'
 
+ Smells Delicious!
 \x1b[0m
 Heredoc_var
 echo -e "$Heredoc_var"
 
-echo 'Soliant Carafe dev refresh complete and should now be running at http://localhost:8000'
+echo 'Carafe refresh complete. Get a taste at http://0.0.0.0:8000'

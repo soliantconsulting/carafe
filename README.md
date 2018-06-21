@@ -12,7 +12,7 @@ To run the project in development, you need to have [Docker](https://www.docker.
     - To force all the Docker images to update, you can run it with the `--hard` switch
       - `./bin/devrefresh.sh --hard`
 
-You can now preview all the Carafe packages at [http://localhost:8000](http://localhost:8000).
+You can now preview all the Carafe packages at [http://0.0.0.0:8000](http://0.0.0.0:8000).
 
 # Docker Development Environment
 
@@ -29,7 +29,7 @@ Instead you can run the following command, which will watch the directory for ch
 docker-compose run --rm build webpack --mode development --watch
 ```
 
-Development changes are output to public, so you can preview them in the development environment by refreshing [http://localhost:8000](http://localhost:8000) in your browser.
+Development changes are output to public, so you can preview them in the development environment by refreshing [http://0.0.0.0:8000](http://0.0.0.0:8000) in your browser.
 
 ## Publishing Packages
 When a package is ready to be released, run webpack in mode production to minify js and css files and deploy to `/carafe-package`. Then run the php helper script to generate a new index.html page and update the code to build the JS Fiddle links.
