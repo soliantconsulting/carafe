@@ -25,6 +25,6 @@
     "squizlabs/php_codesniffer": "^2.8.1"
   },
   "scripts": {
-    "build-index": "php ./carafe-packages-src/index.php"
+    "build-index": "php ./carafe-packages-src/index.php ; rm -Rf ./docs/carafe-packages-build/ ; cp -Rf ./carafe-package/ ./docs/carafe-packages-build/"
   }
 }

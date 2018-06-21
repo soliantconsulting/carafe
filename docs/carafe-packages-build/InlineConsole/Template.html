@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- carafeZoneStart -->
+        <link rel="stylesheet" type="text/css" href="./InlineConsole.css">
+        <script src="./InlineConsole.bundle.js"></script>
+        <!-- carafeZoneEnd  -->
+    </head>
+    <body>
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="/">Carafe</a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Inline Console <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="mt-5">Inline Console</h1>
+                    <p class="lead">
+                        Inline Console designed to extend the console.log and console.debug functions by
+                        piping their content to a div on the page so they can be viewed in situations where the log
+                        is inaccessible, i.e. FileMaker.
+                    </p>
+                    <p class="lead">
+                        Click the FMJS link in the upper right corner and then click the links below to
+                        see the output.
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" onClick="console.log('Hello world!')"><a href="#"><code>console.log('Hello world!');</code></a></li>
+                        <li class="list-group-item" onClick="console.log('Its alive!')"><a href="#"><code>console.log("It's alive!");</code></a></li>
+                        <li class="list-group-item" onClick="console.log(jQuery('nav'))"><a href="#"><code>console.debug(jQuery('nav'));</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Soliant Consulting</span>
+            </div>
+        </footer>
+    </body>
+</html>

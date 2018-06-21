@@ -36,7 +36,7 @@ if (php_sapi_name() == "cli") {
                     echo '<span><h4>' . $fileinfo->getFilename() . '</h4></span>';
                     echo "</div>";
                     echo '<div class="col-2">';
-                    echo ' <a href="/carafe-packages-build/' . $fileinfo->getFilename() . '/Template.html' . '" target="_blank">View Example</a>';
+                    echo ' <a href="./carafe-packages-build/' . $fileinfo->getFilename() . '/Template.html' . '" target="_blank">View Example</a>';
                     echo "</div>";
                     echo '<div class="col-7">';
                     echo ' <a href="#" data-playground="jsfiddle" data-playground-from-group="' . $fileinfo->getFilename() . '" ' .
