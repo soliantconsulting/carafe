@@ -1,0 +1,44 @@
+@import '~font-awesome/css/font-awesome.css';
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.completedScopeBar {
+  fill: #C6FDD0;
+}
+
+.verifyStoryPointsBar {
+  fill: #ff972d;
+}
+
+.storyPointsBar {
+  fill: #7DA1FF;
+}
+
+.addedScopeBar {
+  fill: #fe4b41;
+}
+
+.soliantD3Label {
+  font-family: 'Verdana';
+}
+
+g.axis text {
+  font-family: 'Verdana';
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: left;
+  width: 120px;
+  height: 70px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}

@@ -32,8 +32,8 @@ import 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import ExampleData from './ExampleData.json';
-window.ExampleData = ExampleData;
+import CarafeData from './ExampleData.json';
+window.CarafeData = CarafeData;
 END_TEXT
 fi
 
