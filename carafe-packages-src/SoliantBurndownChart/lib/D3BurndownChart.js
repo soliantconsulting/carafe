@@ -5,7 +5,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'mustache';
 import * as d3 from 'd3';
-import {timeWeek, timeMonths} from "d3-time";
+import {timeWeek, timeMonth} from "d3-time";
 import {timeFormat} from "d3-time-format";
 import {axisBottom, axisLeft} from 'd3-axis';
 import {scaleTime, scaleLinear} from "d3-scale";
@@ -117,16 +117,6 @@ export default class D3BurndownChart {
             this.parseInt = function () {
                 return parseInt(this);
             };
-        };
-
-        let treatAsUTC = function (date) {
-            let result = new Date(date);
-            result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
-            return result;
-        };
-        let daysBetween = function (startDate, endDate) {
-            let millisecondsPerDay = 24 * 60 * 60 * 1000;
-            return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
         };
 
         // graph dimensions
@@ -307,7 +297,7 @@ export default class D3BurndownChart {
         if ('weekly' === this.options.xAxisDisplayInterval) {
             this.options.xAxisDisplayInterval = timeWeek;
         } else if ('monthly' === this.options.xAxisDisplayInterval) {
-            this.options.xAxisDisplayInterval = timeMonths;
+            this.options.xAxisDisplayInterval = timeMonth;
         }
 
         // DISPLAY BEGINS
@@ -778,42 +768,20 @@ export default class D3BurndownChart {
         svg.selectAll("line.horizontalGrid").data(y.ticks(16)).enter()
             .append("line")
             .style("stroke-dasharray", ("3, 3"))
-            .attr(
-                {
-                    "class": "horizontalGrid",
-                    "x1": 0,
-                    "x2": this.graphWidth,
-                    "y1": (d) => {
-                        return y(d);
-                    },
-                    "y2": (d) => {
-                        return y(d);
-                    },
-                    "fill": "none",
-                    "shape-rendering": "crispEdges",
-                    "stroke": "LightGrey",
-                    "stroke-width": "1px"
-                });
+            .style("stroke", "lightgray")
+            .attr("x1", 0)
+            .attr("x2", this.graphWidth)
+            .attr("y1", (d) => {return y(d);})
+            .attr("y2", (d) => {return y(d);});
 
         svg.selectAll("line.verticalGrid").data(x.ticks(xAxisTicks)).enter()
             .append("line")
             .style("stroke-dasharray", ("3, 3"))
-            .attr(
-                {
-                    "class": "verticalGrid",
-                    "y1": 0,
-                    "y2": this.graphHeight,
-                    "x1": (d) => {
-                        return x(d);
-                    },
-                    "x2": (d) => {
-                        return x(d);
-                    },
-                    "fill": "none",
-                    "shape-rendering": "crispEdges",
-                    "stroke": "LightGrey",
-                    "stroke-width": "1px"
-                });
+            .style("stroke", "lightgray")
+            .attr("y1", 0)
+            .attr("y2", this.graphHeight)
+            .attr("x1", (d) => {return x(d);})
+            .attr("x2", (d) => {return x(d);});
     }
 
     setMaxY(value) {

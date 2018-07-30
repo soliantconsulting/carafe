@@ -35,6 +35,7 @@
     "datatables.net-dt": "^1.10.16",
     "expose-loader": "^0.7.5",
     "file-loader": "^1.1.11",
+    "fm-webviewer-bridge": "geistinteractive/fm-webviewer-bridge",
     "font-awesome": "^4.7.0",
     "fullcalendar": "^3.9.0",
     "glob": "^7.1.2",

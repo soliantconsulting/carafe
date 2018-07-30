@@ -2836,6 +2836,10 @@ es-to-primitive@^1.1.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.1"
 
+es6-object-assign@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
+
 es6-templates@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/es6-templates/-/es6-templates-0.2.3.tgz#5cb9ac9fb1ded6eb1239342b81d792bbb4078ee4"
@@ -3224,6 +3228,12 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
 
+fm-webviewer-bridge@geistinteractive/fm-webviewer-bridge:
+  version "0.1.1"
+  resolved "https://codeload.github.com/geistinteractive/fm-webviewer-bridge/tar.gz/5cabc34306fe246269bd89b25c2121b9294c56e4"
+  dependencies:
+    es6-object-assign "^1.1.0"
+
 font-awesome@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
@@ -3561,6 +3571,10 @@ glogg@^1.0.0:
   resolved "https://registry.yarnpkg.com/glogg/-/glogg-1.0.1.tgz#dcf758e44789cc3f3d32c1f3562a3676e6a34810"
   dependencies:
     sparkles "^1.0.0"
+
+gojs@NorthwoodsSoftware/GoJS:
+  version "1.8.26"
+  resolved "https://codeload.github.com/NorthwoodsSoftware/GoJS/tar.gz/29c32fa80a12aca9bc2553d4c76424d1e089dad1"
 
 got@^5.0.0:
   version "5.7.1"

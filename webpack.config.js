@@ -82,7 +82,7 @@ module.exports = (env, options) => {
                     exclude: /node_modules/,
                     loader: 'babel-loader',
                     query: {
-                        cacheDirectory: true,
+                        presets: ['es2015'],
                     },
                 },
                 // process css imports
