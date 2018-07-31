@@ -1,6 +1,39 @@
 # Carafe
 
-## Development
+## Packages
+
+See https://soliantconsulting.github.io/carafe/
+
+## Quickstart
+
+- Copy Carafe infrastructure into your solution
+  - Two tables
+  - One custom function
+  - One folder of scripts
+- Run Carafe Initialize script
+- Create a Web Viewer
+- Paste the following expression into your Web Viewer
+  - `TEH CODEZ`
+- Define a JSON data source that matches one of the provided example formats
+
+Ta-dah!
+## Basic Implementer Documentation
+
+- Explanation of carafeData var
+- Working with JSFiddle
+- Creating your own sample data in JSFiddle
+  - e.g.: `carafeData = [["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],];`
+- Implementing custom HTML
+- Implementing JavaScript adjustments
+- Implementing CSS adjustments
+
+## Advanced Implementer Documentation
+
+- Advanced use of carafeData var
+- FM WebViewer Bridge
+
+
+## Package Development
 
 To run the project in development, you need to have [Docker](https://www.docker.com/) and
 [Docker Compose](https://docs.docker.com/compose/) installed.
