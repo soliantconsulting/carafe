@@ -1,4 +1,6 @@
-vendor
+vendor/
 node_modules/
-public/carafe-packages-build
+public/*
+!public/README.md
+!public/index.php
 yarn-error.log

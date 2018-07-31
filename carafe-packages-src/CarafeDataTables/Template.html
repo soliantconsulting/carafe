@@ -13,30 +13,79 @@
             <div class="row">
                 <div class="col-12">
                     <div class="text-center">
-                        <h2>Soliant FileMaker / Javascript Table Management</h2>
+                        <h1>Carafe DataTables.js Example</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <table id="example" class="display compact display table table-striped table-bordered table-hover" cellspacing="0" width="100%"></table>
+                    <h2>Table One</h2>
+                    <p>This table uses data rows formatted as plain JSON arrays like this:</p>
+                    <p><pre>["Tiger Nixon's Mom", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],</pre></p>
+                    <p>This table is also configured to have custom "pageLength" properties.</p>
+                    <table id="firstTable" class="display compact display table table-striped table-bordered table-hover" cellspacing="0" width="100%"></table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Table Two</h2>
+                    <p>This table uses data rows formatted as JSON objects like this:</p>
+                    <p><pre>
+                    {
+                    "name": "Tiger Nixon's Mom",
+                    "position": "System Architect",
+                    "office": "Edinburgh",
+                    "extn": "5421",
+                    "startDate": "2011/04/25",
+                    "salary": "$320,800"
+                    },</pre></p>
+                    <p>This table is also configured to disable search via "dom" property, and it has a "fmBridge" callback function defined which triggers a FileMaker script when you click a row.</p>
+                    <table id="secondTable" class="display compact display table table-striped table-bordered table-hover" cellspacing="0" width="100%"></table>
                 </div>
             </div>
         </div>
     </body>
+    <style>
+        h1 { font-size: 30px; }
+        h2 { font-size: 20px; border-top: 1px solid #ccc; margin-top: 1em; padding-top: 1em;  }
+    </style>
     <script type="text/javascript">
+        // Quickstart Examples
         jQuery(document).ready(function () {
-            jQuery('#example').DataTable({
-                data: carafeData,
+            jQuery('#firstTable').DataTable({
+                data: carafeData.firstTable,
+                pageLength: 2,
+                lengthMenu: [ 2, 10, 25, 50 ],
                 columns: [
                     {title: "Name"},
                     {title: "Position"},
                     {title: "Office"},
                     {title: "Extn."},
-                    {title: "Start date"},
+                    {title: "Start Date"},
                     {title: "Salary"}
                 ]
+            });
+
+            var secondTable = jQuery('#secondTable').DataTable({
+                data: carafeData.secondTable,
+                dom: 'Brtip',
+                columns: [
+                    {data: "position", title: "Position"},
+                    {data: "name", title: "Name"},
+                    {data: "extn", title: "Extn."},
+                    {data: "salary", title: "Salary"},
+                    {data: "office", title: "Office"},
+                    {data: "startDate", title: "Start Date"},
+                ]
+            });
+
+            $('#secondTable tbody').on('click', 'tr', (e) => {
+                let row = jQuery(e.target).closest('tr');
+                let data = secondTable.row(jQuery(row)).data();
+                // window.fmBridge.callFMScript('Carafe Example Implementation', 'MyScript', JSON.stringify(data));
+                self.location = "fmp://$/Carafe Example Implementation?script=MyScript&param=" + JSON.stringify(data);
             });
         });
     </script>
 </html>
+

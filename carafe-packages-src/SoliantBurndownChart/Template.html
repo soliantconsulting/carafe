@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- carafeZoneStart -->
+        <script type="text/javascript">
+            var windowOnload=window.onload||function(){};window.onload=function(){windowOnload();};
+        </script>
+        <link rel="stylesheet" type="text/css" href="./SoliantBurndownChart.css">
+        <script src="./SoliantBurndownChart.bundle.js"></script>
+        <!-- carafeZoneEnd  -->
+    </head>
+    <body>
+        <div id="chart" style="position:absolute;top:0px;left:0; float:left; width:300px; height:60px;"></div>
+    </body>
+    <script type="text/javascript">
+        window.onload = function () {
+            console.debug('xxx', window, typeof window.D3BurndownChart, typeof D3BurndownChart);
+            var thisChart = new window.D3BurndownChart('#chart', CarafeData.options);
+            thisChart.render(CarafeData.startDate, CarafeData.data);
+        }
+    </script>
+</html>

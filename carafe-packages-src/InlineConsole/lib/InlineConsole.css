@@ -10,6 +10,7 @@
     transition: 0.5s;
     cursor: text;
 }
+
 #terminalBox {
     height: 100%;
 }
@@ -20,10 +21,12 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
 }
+
 .footer {
     position: absolute;
     bottom: 0;
