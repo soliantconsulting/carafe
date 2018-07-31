@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- carafeZoneStart -->
+        <link rel="stylesheet" type="text/css" href="./SoliantBurndownChart.css">
+        <script src="./SoliantBurndownChart.bundle.js"></script>
+        <!-- carafeZoneEnd  -->
+    </head>
+    <body>
+        <div class="container ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <h2>Soliant Burndown Chart</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="chart" style="position:absolute;top:0px;left:0; float:left; width:300px; height:60px;"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        window.onload = function () {
+            let thisChart = new D3BurndownChart('#chart', CarafeData.options);
+            thisChart.render(CarafeData.startDate, CarafeData.data);
+        }
+    </script>
+</html>

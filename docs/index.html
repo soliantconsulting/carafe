@@ -434,6 +434,39 @@
         &lt;/footer&gt;
     &lt;/body&gt;
 &lt;/html&gt;
+</pre></div></div></div><div class="row row-striped"><div class="col-3"><span><h4>SoliantBurndownChart</h4></span></div><div class="col-2"> <a href="./carafe-packages-build/SoliantBurndownChart/Template.html" target="_blank">View Example</a></div><div class="col-7"> <a href="#" data-playground="jsfiddle" data-playground-from-group="SoliantBurndownChart" data-playground-resources="https://cdn.rawgit.com/soliantconsulting/carafe/master/carafe-package/SoliantBurndownChart/SoliantBurndownChart.bundle.js,https://cdn.rawgit.com/soliantconsulting/carafe/master/carafe-package/SoliantBurndownChart/SoliantBurndownChart.css">Edit in JS Fiddle</a><div style='display:none;'><pre data-playground-type='html' data-playground-group='SoliantBurndownChart'>&lt;!doctype html&gt;
+
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;!-- carafeZoneStart --&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./SoliantBurndownChart.css&quot;&gt;
+        &lt;script src=&quot;./SoliantBurndownChart.bundle.js&quot;&gt;&lt;/script&gt;
+        &lt;!-- carafeZoneEnd  --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;container &quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-12&quot;&gt;
+                    &lt;div class=&quot;text-center&quot;&gt;
+                        &lt;h2&gt;Soliant Burndown Chart&lt;/h2&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-12&quot;&gt;
+                    &lt;div id=&quot;chart&quot; style=&quot;position:absolute;top:0px;left:0; float:left; width:300px; height:60px;&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        window.onload = function () {
+            let thisChart = new D3BurndownChart('#chart', CarafeData.options);
+            thisChart.render(CarafeData.startDate, CarafeData.data);
+        }
+    &lt;/script&gt;
+&lt;/html&gt;
 </pre></div></div></div>        </main>
 
         <footer class="footer">
