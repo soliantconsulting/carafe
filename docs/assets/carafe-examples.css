@@ -1,0 +1,57 @@
+body {
+  padding-top: 0;
+}
+/* default the header to hidden and show with jQuery when needed */
+header {
+  display: none;
+}
+nav {
+  border-bottom: 3px solid #dfb826;
+}
+#logo img {
+  width: 130px;
+}
+.jumbotron {
+  padding: 2rem 2rem;
+  overflow: hidden;
+}
+h1, h2 {
+  color: #000;
+  font-family: Arial;
+  font-weight: normal;
+}
+a.btn-primary, a.btn-primary:visited {
+  background-color: #69b84b !important;
+  border-color: #69b84b !important;
+  font-size: 1.15rem;
+}
+a.btn-primary:hover {
+  background-color: #529c31;
+  border-color: #46852a;
+  cursor: pointer;
+}
+a.btn-primary:active, a.btn-primary:focus {
+  background-color: #44832a;
+  border-color: #44832a;
+}
+/*Remove the left padding for the column containing the "Carafe on GitHub" button*/
+.no-indent {
+  padding-left: 0;
+}
+hr {
+  border-top: 3px solid #d6d6d6;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+.btn-secondary {
+  font-size: 1.15rem;
+}
+span.carafe-icon {
+  background: url(https://soliantconsulting.github.io/carafe/assets/icon-carafe-white.svg) no-repeat center left;
+  background-size: contain;
+  display: inline-block;
+  cursor: pointer;
+  height: 17px;
+  width: 16px;
+  margin-right: 7px;
+}
